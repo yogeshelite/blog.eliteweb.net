@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EliteWeb.Models.BlogTable>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+</head>
+<body>
+
+
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-3 pull-left mb-4">
+            <div class="card bd-0 pull-left">
+                @{
+                    var featuredimage = "data:image/png;base64," + item.FeaturedImage;
+                }
+                <img class="card-img-top blg_li_img" src=@featuredimage alt="Image">
+                <div class="card-body bd bd-t-0">
+                    <h6 class="mg-b-3"><a href="" class="tx-dark">@item.Heading</a></h6>
+                    <span class="tx-12">@item.Date</span>
+                </div>
+
+                <!-- button -->
+                <div class="col-12 mt-2">
+                    <a href="@Url.Action("Edit", "AdminBlog", new {id = item.id })" class="btn btn-primary btn-icon rounded-circle mg-r-5 mg-b-10">
+                        <div><i class="fa fa-edit"></i></div>
+                    </a>
+
+                    <a href="@Url.Action("Delete", "AdminBlog", new {id = item.id })" class="btn btn-danger btn-icon rounded-circle mg-r-5 mg-b-10"><div><i class="fa fa-remove"></i></div></a>
+                </div>
+            </div><!--  Blog card -->
+
+        </div><!-- col-3 -->
+    }
+
+
+</body>
+</html>

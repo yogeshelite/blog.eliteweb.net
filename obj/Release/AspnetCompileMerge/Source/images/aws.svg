@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="108.844" height="82.176" viewBox="0 0 108.844 82.176">
+  <g id="Group_3720" data-name="Group 3720" transform="translate(-1363.362 -1284.959)">
+    <g id="_39237" data-name="39237" transform="translate(1363.362 1342.958)">
+      <g id="Group_3717" data-name="Group 3717" transform="translate(87.221 0)">
+        <g id="Group_3716" data-name="Group 3716">
+          <path id="Path_13224" data-name="Path 13224" d="M43.845,23.9c-1.28-1.586-12.3-2.952-19.028,1.769-1.026.724-.858,1.725.3,1.591,3.782-.446,12.217-1.457,13.712.46s-1.673,9.859-3.1,13.4c-.436,1.074.494,1.5,1.462.7C43.515,36.556,45.135,25.5,43.845,23.9Z" transform="translate(-24.139 -22.419)" fill="#c13939"/>
+        </g>
+      </g>
+      <g id="Group_3719" data-name="Group 3719" transform="translate(0 2.106)">
+        <g id="Group_3718" data-name="Group 3718">
+          <path id="Path_13225" data-name="Path 13225" d="M101.269,28.888a105.6,105.6,0,0,1-40.533,8.287A106.824,106.824,0,0,1,7.618,23.089c-1.318-.776-2.3.58-1.2,1.572A78.624,78.624,0,0,0,59.5,44.93c14.676,0,31.7-4.615,43.466-13.281C104.912,30.211,103.258,28.055,101.269,28.888Z" transform="translate(-5.941 -22.859)" fill="#c13939"/>
+        </g>
+      </g>
+    </g>
+    <text id="aws" transform="translate(1366.206 1337.959)" fill="#c13939" font-size="58" font-family="VarelaRound-Regular, Varela Round"><tspan x="0" y="0">aws</tspan></text>
+  </g>
+</svg>

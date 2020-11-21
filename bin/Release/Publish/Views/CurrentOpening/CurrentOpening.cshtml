@@ -1,0 +1,105 @@
+﻿@model IEnumerable<EliteWeb.Models.Career>
+@{
+    ViewBag.Title = "CurrentOpening";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <!-- start container -->
+
+    <div class="breadcrumbs-section">
+        <!--start breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumbs-custom aos-item aos-init aos-animate" data-aos="fade-up">
+                    <li style="margin-right: 5px;"><a href="/home">HOME </a></li>
+                    <li><span class="activated">/ Current openings</span></li>
+                </ul>
+            </div>
+        </div>
+
+    </div><!--end breadcrumbs -->
+
+    <div class="main-heading spc-btm-30">
+        <!--start main heading -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <h1>Come work<br>with us.</h1>
+            </div>
+        </div>
+    </div><!-- end main heading -->
+
+
+    <div id="ui-cat" class="work-form-section spc-btm-128">
+        <!--start main-section-->
+        <div class="row">
+            <div class="col-lg-6">
+                <form method="post" class="contact-form">
+                    <input type="hidden" value="@ViewBag.Error" id="msg" />
+                    <div class="floating-label">
+                        <input class="floating-input" type="text" placeholder=" " id="Name" name="Name" required>
+                        <label>Full Name</label>
+                    </div>
+
+                    <div class="floating-label">
+                        <input class="floating-input" type="text" placeholder=" " id="Email" name="Email" required>
+                        <label>Email</label>
+                    </div>
+
+
+                    <div class="floating-label">
+                        <select class="floating-select" onchange="this.setAttribute('value', this.value);" value="">
+                            <option value=""></option>
+                            @foreach (var item in Model)
+                            {
+                                <option value="@item.jobTitle">@item.jobTitle</option>
+                            }
+                        </select>
+
+                        <label> Applying For?</label>
+                    </div>
+
+                    <div class="floating-label">
+                        <input class="floating-input" type="file" placeholder=" " id="file" name="file">
+                        <label>Attach Your Resume</label>
+                        <span class="resume-upload"><a onclick="trigerFile()"><img src="~/images/resume-upload.svg"></a></span>
+                    </div>
+
+                    <div class="floating-label mb-34">
+                        <textarea class="floating-textarea" id="Message" name="Message" required></textarea>
+                        <label>Your Message</label>
+                    </div>
+
+
+                    <div class="clearfix"></div>
+                    <div class="send-btn spc-tp-50">
+
+                        <button type="submit">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col-lg-6">
+
+                <img src="~/images/current-opening.png" alt="">
+
+            </div>
+
+        </div>
+    </div><!--end main-section-->
+
+
+
+
+
+
+
+</div><!-- end container -->
+@{
+
+    Html.RenderPartial("~/Views/Shared/oops_popup.cshtml");
+}@{
+    Html.RenderPartial("~/Views/Shared/Congratulation_popup.cshtml");
+
+}

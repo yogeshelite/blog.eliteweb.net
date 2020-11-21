@@ -1,0 +1,156 @@
+﻿@model EliteWeb.Models.BlogTable
+@{
+    ViewBag.Title = "blog_Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <!-- start container -->
+
+    <div class="breadcrumbs-section">
+        <!--start breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumbs-custom aos-item aos-init aos-animate" data-aos="fade-up">
+                    <li style="margin-right: 5px;"><a href="/home">HOME </a></li>
+                    <li><span class="activated">/  BLOG DETAIL</span></li>
+                </ul>
+            </div>
+        </div>
+    </div><!--end breadcrumbs -->
+
+    <div class="blog_development">
+        <!--start blog_development-->
+        <div class="row">
+            <div class="col-lg-12">
+                <p>@Model.Category</p>
+
+            </div>
+        </div>
+    </div><!--end blog_development-->
+
+    <div class="main-heading indust_spc">
+        <!--start main heading -->
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <h1>
+                    @Model.Heading
+                </h1>
+                <h2>5 mins read</h2>
+            </div>
+        </div>
+    </div><!-- end main heading -->
+
+    <div class="enterprise-img-section">
+        <!--start blog-img-section -->
+        <div class="row">
+            <div class="col-lg-12">
+                @{
+                    var featuredimage = "data:image/png;base64," + Model.FeaturedImage;
+                }
+                <img src=@featuredimage class="mb-0">
+
+
+            </div>
+
+        </div>
+    </div><!--end blog-img-section -->
+
+    <div class="blog-detail-scl-icon-section">
+        <!--start socail-icon-section -->
+
+        <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-2 pull-left">
+                        <ul>
+                            <li><a href="#"><img src="~/images/social-media/linkedin.svg" alt="" /><span>Linkedin </span></a></li>
+                            <li><a href="#"><img src="~/images/social-media/instagram.svg" alt="" /><span>Instagram</span></a></li>
+                            <li><a href="#"><img src="~/images/social-media/facebook.svg" alt="" /><span>Facebook</span></a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-10 pull-left">
+                        @Html.Raw(Model.Blog)
+                        @*<p>Remember when your mother warned you not to run down the stairs because you could fall and hurt yourself? Or when you held your palm over a candle’s flame and started feeling the burn? The “laws of UX” are similar — they are cause and effect relationships where one event (the cause) makes another event happen (the effect). Whether a designer acknowledges them or not, the “laws” rule and operate — and will affect the effectiveness of a design.</p>
+
+        <p>Take Miller’s Law, for example, which states that “the average person can only keep around seven items in their working memory.” When the rule is disregarded, people are forced to think more than they should have to. UX professionals refer to this phenomenon as cognitive overload.</p>
+
+        <p>
+            Ignoring Miller’s Law can have negative consequences that may impede the UX, i.e., if there are too many things people have to remember, it could cause frustration and decision paralysis.
+        </p>*@
+                    </div>
+
+                </div>
+
+            </div>
+
+    </div><!--end start socail-icon-section-->
+
+
+
+
+</div><!-- end container -->
+
+<div class="blog-detail-Stuff">
+    <div class="container">
+        <!-- start container -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>More Stuff To Read</h3>
+            </div>
+        </div>
+        @{
+            var counter = 0;
+        }
+        <div class="row">
+            @foreach (var item in ViewBag.bloglist)
+            {
+                if (counter < 3)
+                {
+
+                    var imagestring = "data:image/png;base64," + item.FeaturedImage;
+
+                    <div class="col-lg-4">
+                        <a  href="@Url.Action("blog_Details", "Blog", new {id = item.id })">
+                            <img src=@imagestring>
+                            <h6>@item.Category</h6>
+                            <h1>@item.Heading</h1>
+                            <h2>5 mins read</h2>
+                            <p>@item.ShortDiscription</p>
+                        </a>
+                    </div>
+
+                    counter++;
+                }
+            }
+            @*<div class="col-lg-4">
+                    <img src="~/images/blog_stuff.png">
+                    <h6>DEVELOPMENT</h6>
+                    <h1>If You Don’t Know What You Want, This Is For You</h1>
+                    <h2>5 mins read</h2>
+                    <p>Looking for the best whiskey mixed drinks and recipes to create for …</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <img src="~/images/blog_stuff.png">
+                    <h6>DEVELOPMENT</h6>
+                    <h1>If You Don’t Know What You Want, This Is For You</h1>
+                    <h2>5 mins read</h2>
+                    <p>Looking for the best whiskey mixed drinks and recipes to create for …</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <img src="~/images/blog_stuff.png">
+                    <h6>DEVELOPMENT</h6>
+                    <h1>If You Don’t Know What You Want, This Is For You</h1>
+                    <h2>5 mins read</h2>
+                    <p>Looking for the best whiskey mixed drinks and recipes to create for …</p>
+                </div>*@
+        </div>
+
+    </div> <!-- end container -->
+
+
+
+</div>

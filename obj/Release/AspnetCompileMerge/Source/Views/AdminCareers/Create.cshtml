@@ -1,0 +1,109 @@
+﻿@model EliteWeb.Models.Career
+    @{
+        ViewBag.Title = "Create";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+    <div class="card card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <label for="JobTitle">Job Title</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.jobTitle, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.jobTitle, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="locationn">Location</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.location, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.location, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ShortDiscription">Short Discription</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ShortDiscription, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.ShortDiscription, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="jobintroduction">Job Introduction</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.jobintroduction, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.jobintroduction, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="YourMission">Your Mission</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Yourmission, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.Yourmission, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Skills">Ideally, you should have</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Skills, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.Skills, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="BanerImage">Baner Image</label>
+                    @*<div class="col-md-10">
+                            @Html.EditorFor(model => model.BanerImage, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.BanerImage, "", new { @class = "text-danger" })
+                        </div>*@
+                    <div class="col-md-12">
+                        <input type="file" id="image" class="form-control" accept="image/png, image/jpeg" required/>
+                        @Html.HiddenFor(model => model.BanerImage, new { @id = "modelimage" })
+                        @Html.ValidationMessageFor(model => model.BanerImage, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <lable for="FeaturedImagePreview">Image Preview</lable>
+                        <div id="imagePreview" style="border:outset;height:100%"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <script type="text/javascript">
+        // Be aware! We are handling only the first <input type="file" /> element
+        // To avoid errors, it should be placed before this piece of code
+        var input = document.querySelector('input[id="image"]');
+
+        // You will receive the Base64 value every time a user selects a file from his device
+        // As an example I selected a one-pixel red dot GIF file from my computer
+        input.onchange = function () {
+            var file = input.files[0],
+                reader = new FileReader();
+
+            reader.onloadend = function () {
+                // Since it contains the Data URI, we should remove the prefix and keep only Base64 string
+                var b64 = reader.result.replace(/^data:.+;base64,/, '');
+                console.log(b64);
+                $("#modelimage").val(b64);
+                $("#imagePreview").html("<img src='data:image/png;base64," + b64 + "' style='width:100%;height: auto;'>");
+            };
+
+            reader.readAsDataURL(file);
+        };
+    </script>

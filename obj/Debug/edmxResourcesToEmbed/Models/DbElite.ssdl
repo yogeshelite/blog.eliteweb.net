@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EWT_PrivateSQRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BlogTable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Blog" Type="varchar(max)" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Heading" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShortDiscription" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="FeaturedImage" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Career">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jobTitle" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="location" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ShortDiscription" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="jobintroduction" Type="varchar(max)" Nullable="false" />
+    <Property Name="Yourmission" Type="varchar(max)" Nullable="false" />
+    <Property Name="Skills" Type="varchar(max)" Nullable="false" />
+    <Property Name="BanerImage" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EWT_PrivateSQRModelStoreContainer">
+    <EntitySet Name="BlogTable" EntityType="Self.BlogTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Career" EntityType="Self.Career" Schema="TeamElite" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="TeamElite" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
