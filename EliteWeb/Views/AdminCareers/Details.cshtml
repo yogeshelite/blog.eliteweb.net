@@ -1,0 +1,74 @@
+﻿@model EliteWeb.Models.Career
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Career</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.jobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDiscription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortDiscription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobintroduction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobintroduction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yourmission)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yourmission)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BanerImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BanerImage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,53 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+    @{ 
+        Layout = null;
+    }
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.min.css">
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="~/plugin/owl/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/plugin/owl/assets/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Elitewebtechnologies</title>
+</head>
+<body>
+    @{
+        Html.RenderPartial("~/Views/Shared/Header.cshtml");
+    }
+    <div class="container">
+        <!-- start container -->
+
+        <div class="error-section">
+            <!--start breadcrumbs -->
+            <div class="row">
+                <div class="col-lg-5 offset-md-3">
+                    <img src="~/images/error.png">
+                    <h1>404</h1>
+                    <h2>Something's missing</h2>
+                    <p>An error occurred while processing your request</p>
+                    <h3><a href="/home">back to home</a></h3>
+                </div>
+            </div>
+
+        </div><!--end breadcrumbs -->
+
+
+
+    </div><!-- end container -->
+    @{
+        Html.RenderPartial("~/Views/Shared/Footer.cshtml");
+    }
+    <script src="~/bootstrap/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="~/plugin/owl/assets/vendors/jquery.min.js"></script>
+    <script src="~/plugin/owl/assets/owlcarousel/owl.carousel.js"></script>
+    <script src="~/plugin/owl/assets/vendors/jquery.mousewheel.min.js"></script>
+    <script src="~/js/custom.js"></script>
+</body>
+</html>

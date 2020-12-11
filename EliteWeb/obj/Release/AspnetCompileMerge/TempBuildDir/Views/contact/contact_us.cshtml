@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "contact_us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <!-- start container -->
+
+    <div class="breadcrumbs-section">
+        <!--start breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumbs-custom aos-item aos-init aos-animate" data-aos="fade-up">
+                    <li style="margin-right: 5px;"><a href="/home">HOME </a></li>
+                    <li><span class="activated">/ CONTACT US</span></li>
+                </ul>
+            </div>
+        </div>
+
+    </div><!--end breadcrumbs -->
+
+    <div class="main-heading spc-btm-30">
+        <!--start main heading -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <h1>
+                    Build, Create, Innovate.<br>
+                    Let’s Begin Today!
+                </h1>
+            </div>
+        </div>
+    </div><!-- end main heading -->
+
+    <div class="industry-filter-category contact_spc">
+        <!--start contact-filter section -->
+        <div class="row">
+            <div class="col-lg-7">
+                <h2>Filter by Category</h2>
+                <div class="industry-filter-btn">
+                    <a>UI UX Design</a>
+                    <a>Mobile Application</a>
+                    <a>Back end</a>
+                    <a>BRAND IDENTITY</a>
+                    <a>Careers</a>
+                    <a>Other</a>
+
+                </div>
+
+                <form method="post" class="contact-form">
+                    <input type="hidden"value="@ViewBag.Error" id="msg" />
+                    <div class="floating-label">
+                        <input class="floating-input" type="text" placeholder=" " id="Name" name="Name" required>
+                        <label>Name</label>
+                    </div>
+                    <div class="floating-label">
+                        <input class="floating-input" type="text" placeholder=" " id="Email" name="Email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="floating-label">
+                        <input class="floating-input" type="text" placeholder=" " id="Company" name="Company" required>
+                        <label>Company Name</label>
+                    </div>
+                    <div class="floating-label mb-34">
+                        <textarea class="floating-textarea" id="Message" name="Message" required></textarea>
+                        <label>Your Message</label>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="send-btn">
+
+                        <button type="submit" class="submit_btn">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+
+
+            <div class="col-lg-5">
+                <div class="contact-logo-section">
+                    <a href="">
+                        <img src="~/images/audi_black_vector_logo.svg" alt="abc" class="contact-logo-img">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div><!--end contact-filter section  -->
+
+
+
+</div><!-- end container -->
+@{
+
+    Html.RenderPartial("~/Views/Shared/oops_popup.cshtml");
+}@{
+    Html.RenderPartial("~/Views/Shared/Congratulation_popup.cshtml");
+
+}
+<script>
+
+</script>

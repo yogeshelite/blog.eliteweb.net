@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EWT_PrivateSQRModelStoreContainer" CdmEntityContainer="EWT_PrivateSQREntities1">
+    <EntitySetMapping Name="BlogTable">
+      <EntityTypeMapping TypeName="EWT_PrivateSQRModel.BlogTable">
+        <MappingFragment StoreEntitySet="BlogTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Blog" ColumnName="Blog" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ShortDiscription" ColumnName="ShortDiscription" />
+          <ScalarProperty Name="FeaturedImage" ColumnName="FeaturedImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Career">
+      <EntityTypeMapping TypeName="EWT_PrivateSQRModel.Career">
+        <MappingFragment StoreEntitySet="Career">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="ShortDiscription" ColumnName="ShortDiscription" />
+          <ScalarProperty Name="jobintroduction" ColumnName="jobintroduction" />
+          <ScalarProperty Name="Yourmission" ColumnName="Yourmission" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="BanerImage" ColumnName="BanerImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login">
+      <EntityTypeMapping TypeName="EWT_PrivateSQRModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

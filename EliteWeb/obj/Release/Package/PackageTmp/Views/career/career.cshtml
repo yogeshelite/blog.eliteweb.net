@@ -1,0 +1,252 @@
+﻿@model IEnumerable<EliteWeb.Models.Career>
+@{
+    ViewBag.Title = "career";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <!-- start container -->
+
+    <div class="breadcrumbs-section">
+        <!--start breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumbs-custom aos-item aos-init aos-animate" data-aos="fade-up">
+                    <li style="margin-right: 5px;"><a href="/home">HOME </a></li>
+                    <li><span class="activated">/ CARRER</span></li>
+                </ul>
+            </div>
+        </div>
+    </div><!--end breadcrumbs -->
+
+    <div class="main-heading spc-btm-50">
+        <!--start main heading -->
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <h1><span class="career-passionate">We are</span> Passionate!</h1>
+
+            </div>
+        </div>
+    </div><!-- end main heading -->
+
+    <div class="case-study-img-section about-img-spc">
+        <!--start case-study-img-section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="~/images/desktp-passion-img.png">
+            </div>
+
+        </div>
+    </div><!--end case-study-img-section-->
+
+
+
+    <div class="case-study-team-efforts">
+        <!--start case-study-team efforts -->
+        <div class="row">
+            <div class="col-lg-6 elite-efs-spc">
+                <div class="col-2 pull-left mb_pd_0">
+                    <img src="~/images/team-effrt-img1.svg">
+                </div>
+
+                <div class="col-10 pull-left">
+                    <h3>Hard Work</h3>
+                    <p>Our teams apply their skills and creativity. They work hard for perfection and deliver!</p>
+                </div>
+
+            </div>
+            <div class="col-lg-6 elite-efs-spc">
+                <div class="col-2 pull-left mb_pd_0">
+                    <img src="~/images/team-effrt-img3.svg">
+                </div>
+
+                <div class="col-10 pull-left">
+                    <h3>Mutual Respect</h3>
+                    <p>We believe in love and respect for one another. This is how we learn and grow.</p>
+                </div>
+
+            </div>
+            <div class="col-lg-6 elite-efs-spc">
+                <div class="col-2 pull-left mb_pd_0">
+                    <img src="~/images/team-effrt-img2.svg">
+                </div>
+
+                <div class="col-10 pull-left">
+                    <h3>Integrity</h3>
+                    <p>We are true to our work and vision. Our mission is to deliver nothing but excellence.</p>
+                </div>
+
+            </div>
+            <div class="col-lg-6 elite-efs-spc">
+                <div class="col-2 pull-left mb_pd_0">
+                    <img src="~/images/team-effrt-img4.svg">
+                </div>
+
+                <div class="col-10 pull-left">
+                    <h3>We’re Fun!</h3>
+                    <p>We’re not just all work and no play. There’s never a dull day at work!</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div><!--end case-study-team efforts-->
+
+</div><!-- end container -->
+
+<div class="carrer-job-section">
+
+    <div class="container">
+
+
+        <div class="carrer-job-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Look! We’re Hiring.</h2>
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="carrer-job-list">
+                    <div class="row">
+
+                        <div class="col-lg-8">
+                            <h3><a href="/Career/career_details/@item.id">@item.jobTitle</a></h3>
+                            <p>
+                                @item.ShortDiscription
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2><a href="/Career/career_details/@item.id">@item.location</a></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="carrer-border"></div>
+            }
+            @*<div class="carrer-job-list">
+                    <div class="row">
+
+                        <div class="col-lg-8">
+                            <h3><a href="/career/career_details">UI Designer</a></h3>
+                            <p>
+                                You will design user-machine interactions spanning over devices
+                                such as computers, mobiles and website and more!
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2><a href="/career/career_details">Chandigarh</a></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="carrer-border"></div>
+
+                <div class="carrer-job-list">
+                    <div class="row">
+
+                        <div class="col-lg-8">
+                            <h3><a href="/career/career_details">Business Analyst</a></h3>
+                            <p>
+                                You will analyze an organization and also document its processesCHANDIGARH
+                                or systems, and its integration with technology.
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2><a href="/career/career_details">Chandigarh</a></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="carrer-border"></div>
+
+                <div class="carrer-job-list">
+                    <div class="row">
+
+                        <div class="col-lg-8">
+                            <h3><a href="/career/career_details">Android Developer</a></h3>
+                            <p>
+                                You will create new applications for Android devices.
+                                Knowledge of Java, and C++ and the like is essential.
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2><a href="/career/career_details">Chandigarh</a></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="carrer-border"></div>
+
+                <div class="carrer-job-list">
+                    <div class="row">
+
+                        <div class="col-lg-8">
+                            <h3><a href="/career/career_details">Full Stack Developer </a></h3>
+                            <p>
+                                You will have to handle all the work of databases,CHANDIGARH
+                                systems engineering, servers, and clients.
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2><a href="/career/career_details">Chandigarh</a></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="carrer-border"></div>
+
+                <div class="carrer-job-list">
+                    <div class="row">
+
+                        <div class="col-lg-8">
+                            <h3><a href="/career/career_details">Full Stack Developer</a></h3>
+                            <p>
+                                You will analyze an organization and also document its processesCHANDIGARH
+                                or systems, and its integration with technology.
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2><a href="/career/career_details">Chandigarh</a></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="carrer-border"></div>*@
+
+
+            <div class="carrer-job-list">
+                <div class="row">
+
+                    <div class="col-lg-8">
+                        <h3><a href="">Can't find your profile?</a></h3>
+                        <p>
+                            We are always looking for new talent, kindly mail us your resume
+                            <span><a href="" class="text_deco">careers@elitewebtechnologies.com</span></a>
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4">
+                        <h2><a href="">Chandigarh</a></h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div><!--end conainer-->
